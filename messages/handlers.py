@@ -4,7 +4,7 @@ import uuid
 from tornado.gen import coroutine
 from core.handlers import UserBaseHandler
 from messages.buffer import get_message_buffer
-
+from datetime import datetime
 
 class MessageUpdatesHandler(UserBaseHandler):
     @coroutine
@@ -32,6 +32,7 @@ class MessageNewHandler(UserBaseHandler):
         message = {
             "id": str(uuid.uuid4()),
             "body": self.get_argument("body"),
+            "created_at": datetime.now(),
             "user": self.user
         }
         self.write(message)
