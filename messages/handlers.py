@@ -6,6 +6,7 @@ from core.handlers import UserBaseHandler
 from messages.buffer import get_message_buffer
 from datetime import datetime
 
+
 class MessageUpdatesHandler(UserBaseHandler):
     @coroutine
     def post(self):
