@@ -22,6 +22,10 @@ class MessageBuffer(object):
             if new_count:
                 result_future.set_result(self.messages[-new_count:])
                 return result_future
+        elif self.messages:
+            result_future.set_result(self.messages[self.cache_size:])
+            return result_future
+
         self.waiters.add(result_future)
         return result_future
 
