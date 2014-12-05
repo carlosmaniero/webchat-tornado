@@ -49,6 +49,8 @@ class MessageBuffer(object):
                 new_count += 1
             if new_count:
                 messages = messages[-new_count:]
+            else:
+                messages = []
         self.messages = self.messages[-self.cache_size:]
         return messages
 
