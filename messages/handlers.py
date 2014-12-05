@@ -33,7 +33,7 @@ class MessageNewHandler(UserBaseHandler):
         message = {
             "id": str(uuid.uuid4()),
             "body": self.get_argument("body"),
-            "created_at": datetime.now(),
+            "created_at": str(datetime.now()),
             "user": self.user
         }
         self.write(message)
