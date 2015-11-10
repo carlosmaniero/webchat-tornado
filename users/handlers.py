@@ -25,8 +25,7 @@ class UserHandler(ServerBaseHandler):
     def post(self, *args, **kwargs):
         data = {
             'id': self.get_argument('id'),
-            'first_name': self.get_argument('first_name'),
-            'last_name': self.get_argument('last_name'),
+            'full_name': self.get_argument('full_name'),
             'nickname': self.get_argument('nickname'),
             'email': self.get_argument('email'),
             'thumb': self.get_argument('thumb')
